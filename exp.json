@@ -1,0 +1,24 @@
+{
+  "name": "yokoten-input",
+  "description": "A learning experience",
+  "slug": "yokoten-input",
+  "privacy": "public",
+  "sdkVersion": "15.0.0",
+  "version": "1.0.0",
+  "orientation": "portrait",
+  "primaryColor": "#cccccc",
+  "icon": "./assets/icons/bug.png",
+  "loading": {
+    "icon": "./assets/icons/bug.png",
+    "hideExponentText": true
+  },
+  "packagerOpts": {
+    "assetExts": [
+      "ttf",
+      "mp4"
+    ]
+  },
+  "ios": {
+    "supportsTablet": true
+  }
+}
