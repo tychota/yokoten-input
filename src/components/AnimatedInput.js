@@ -6,6 +6,12 @@ import BaseInput from './BaseInput';
 Animated.Input = Animated.createAnimatedComponent(TextInput);
 
 class AnimatedInput extends BaseInput {
+  componentWillReceiveProps(props: PropsType) {
+    Animated.timing(this.state.progress, {
+      toValue: props.input.value ? 1 : 0,
+    }).start();
+  }
+
   render() {
     const { input, ...otherProps } = this.props;
     const opacity = this.state.progress.interpolate({
