@@ -11,6 +11,8 @@ import { StyleSheet, View, TextInput } from 'react-native';
  * and callbacks like onChange, onFocus
  */
 import { reduxForm, Field } from 'redux-form';
+import Input from './components/Input';
+import AnimatedProvider from './components/AnimatedProvider';
 
 // declare a dummy form page
 class App extends Component {
@@ -21,7 +23,7 @@ class App extends Component {
         <View>
           {/** create an input field in the form that render a react native text input */}
           {/** destructure the input props so the property value, onChange text are pass to the textInput */}
-          <Field name="input" component={props => <TextInput style={styles.input} {...props} {...props.input} />} />
+          <Field name="input" component={props => <AnimatedProvider {...props}><Input /></AnimatedProvider>} />
         </View>
       </View>
     );
@@ -34,13 +36,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#8B98BA',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   input: {
     width: 300,
     height: 30,
-    backgroundColor: 'white',
-  },
+    backgroundColor: 'white'
+  }
 });
 
 // create a redux form name "home", and connect the dummy component to create a container
